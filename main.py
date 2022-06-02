@@ -149,6 +149,42 @@ def plot12():
     plt.show()
 
 
+# Histogram
+def plot13():
+    plt.xlabel("Sugar Level")
+    plt.ylabel("Number Of Patients")
+    plt.title("Blood Sugar Chart")
+
+    blood_sugar_men = [113, 85, 90, 150, 149, 88, 93, 115, 135, 80, 77, 82, 129]
+    blood_sugar_women = [67, 98, 89, 120, 133, 150, 84, 69, 89, 79, 120, 112, 100]
+    plt.hist([blood_sugar_men, blood_sugar_women], bins=[80, 100, 125, 150], rwidth=0.95, color=['green', 'orange'], label=['men', 'women'])
+    plt.legend()
+    plt.show()
+
+
+# Pie
+def plot14():
+    exp_vals = [1400, 600, 300, 410, 250]
+    exp_labels = ["Home Rent", "Food", "Phone/Internet Bill", "Car ", "Other Utilities"]
+    plt.axis("equal")
+    plt.pie(exp_vals, labels=exp_labels, shadow=True, autopct='%1.1f%%', radius=1.5, explode=[0, 0, 0, 0.1, 0.2], counterclock=True, startangle=45)
+    # c:/code/piechart.pdf
+    plt.savefig('piechart.png', bbox_inches='tight', pad_inches=2, transparent=True)
+    plt.show()
+
+
+# exercise
+def exer():
+    company = ['Google', 'AMZN', 'MSFT', 'FB']
+    revenue = [90, 136, 89, 27]
+    plt.title("US Technology Stocks")
+    plt.ylabel('Revenue(Bin)')
+    plt.bar(company, revenue)
+    plt.savefig("exer.jpg")
+    plt.savefig("exer.pdf", pad_inches=5)
+    plt.show()
+
+
 def main():
     x = [1, 2, 3, 4, 5, 6, 7]
     y = [50, 51, 52, 48, 47, 49, 46]
@@ -165,6 +201,9 @@ def main():
     plot10()
     plot11()
     plot12()
+    plot13()
+    plot14()
+    exer()
 
 
 if __name__ == "__main__":
